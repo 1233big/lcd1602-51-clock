@@ -1,0 +1,55 @@
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 密钥与本地配置
+.env
+.env.local
+*.key
+*.pem
+
+# Keil 构建产物（删掉后重新编译即可恢复）
+Objects/
+Listings/
+Debug/
+Release/
+build/
+*.o
+*.d
+*.a
+*.axf
+*.elf
+*.bin
+*.hex
+*.map
+*.lst
+*.m51
+*.obj
+*.lnp
+*.crf
+*.dep
+*.sct
+*.iex
+*.htm
+
+# Keil 个人界面与调试设置（每台机器不同，不入库）
+*.uvgui.*
+*.uvopt
+*.bak
+*.scvd
+
+# Python
+__pycache__/
+*.py[cod]
+
+# 课程报告与本地排版工具（与本仓库无关，只留在本地）
+*.docx
+~$*
+_tools/
+_*_dump.txt
