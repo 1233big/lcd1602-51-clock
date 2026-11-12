@@ -2,6 +2,21 @@
 
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [1.1.0] - 2026-11-12
+
+### 新增
+
+- `LICENSE`：MIT 许可证，项目转为公开仓库
+- `SECURITY.md`：漏洞私密报告渠道与响应时限
+- `参考文档/lcd1602_reference.md`：E 脚时序、指令集、C 与汇编逐段对照、延时标定与定时器初值推导
+- `.github/workflows/selftest.yml`：push / PR 时自动运行 `build_lcd.py` 自检
+
+### 变更
+
+- `参考文档/lcd1602_asm_reference.txt` 改名为 `参考文档/lcd1602_demo.asm`，文件名标明它是可编译的汇编源码
+- `.gitignore` 增加 `.workbuddy/`
+- `README` 补充自检脚本输出 `lcd1602.hex` 的说明，更新目录结构与许可证
+
 ## [1.0.0] - 2026-11-12
 
 ### 新增

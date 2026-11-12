@@ -69,8 +69,11 @@ lines on LCD: ['Claude', 'LCD1602 OK']
 checks OK
 ```
 
-这个脚本演示的是显示固定字符串的最简版本（对应 `参考文档/lcd1602_asm_reference.txt`），
+这个脚本演示的是显示固定字符串的最简版本（对应 `参考文档/lcd1602_demo.asm`），
 时钟逻辑以 `main.c` 为准。
+
+脚本会把编码结果写到**与它同目录**的 `lcd1602.hex`，该文件已被 `.gitignore` 忽略。
+它和 Keil 编译出的 `Objects/作业.hex` 是两个不同的东西：前者用于离线自检，后者才是烧进芯片的固件。
 
 ## 目录结构
 
@@ -82,8 +85,11 @@ checks OK
 ├── LCD1602.uvproj                 Keil 工程文件（AT89C52，输出名 作业）
 ├── build_lcd.py                   8051 编码器 + LCD 总线模拟器，用于无硬件自检
 ├── 参考文档/
-│   └── lcd1602_asm_reference.txt  与驱动等价逻辑的汇编对照版，便于阅读时序
+│   ├── lcd1602_reference.md       LCD1602 时序、指令集、汇编对照与定时器算法手册
+│   └── lcd1602_demo.asm           同逻辑的完整汇编源码，可用 Keil 重编
 ├── README.md
+├── LICENSE
+├── SECURITY.md
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── .editorconfig
@@ -106,4 +112,4 @@ checks OK
 
 ## 许可证
 
-本项目暂未开源，未附许可证，保留所有权利。
+[MIT](LICENSE) © 2026 1233big

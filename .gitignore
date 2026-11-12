@@ -53,3 +53,6 @@ __pycache__/
 ~$*
 _tools/
 _*_dump.txt
+
+# 本地 agent 工具的记忆与临时状态
+.workbuddy/
