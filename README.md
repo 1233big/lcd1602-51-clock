@@ -58,7 +58,7 @@ P0 口是开漏输出，板上需要有上拉电阻（常见开发板已自带�
 最后断言 LCD 收到的指令序列和显示文本符合预期：
 
 ```bash
-python -I build_lcd.py
+python -I tools/build_lcd.py
 ```
 
 正常情况下输出末尾为：
@@ -69,8 +69,8 @@ lines on LCD: ['Claude', 'LCD1602 OK']
 checks OK
 ```
 
-这个脚本演示的是显示固定字符串的最简版本（对应 `参考文档/lcd1602_demo.asm`），
-时钟逻辑以 `main.c` 为准。
+这个脚本演示的是显示固定字符串的最简版本（对应 `docs/lcd1602_demo.asm`），
+时钟逻辑以 `src/main.c` 为准。
 
 脚本会把编码结果写到**与它同目录**的 `lcd1602.hex`，该文件已被 `.gitignore` 忽略。
 它和 Keil 编译出的 `Objects/作业.hex` 是两个不同的东西：前者用于离线自检，后者才是烧进芯片的固件。
@@ -79,14 +79,18 @@ checks OK
 
 ```
 51_LCD1602/
-├── main.c                         主程序：定时器初始化 + 时钟进位 + 显示刷新
-├── lcd1602.c                      LCD1602 驱动实现（含逐函数中文注释）
-├── lcd1602.h                      驱动接口声明与接线说明
 ├── LCD1602.uvproj                 Keil 工程文件（AT89C52，输出名 作业）
-├── build_lcd.py                   8051 编码器 + LCD 总线模拟器，用于无硬件自检
-├── 参考文档/
+├── src/
+│   ├── main.c                     主程序：定时器初始化 + 时钟进位 + 显示刷新
+│   ├── lcd1602.c                  LCD1602 驱动实现（含逐函数中文注释）
+│   └── lcd1602.h                  驱动接口声明与接线说明
+├── tools/
+│   └── build_lcd.py               8051 编码器 + LCD 总线模拟器，用于无硬件自检
+├── docs/
 │   ├── lcd1602_reference.md       LCD1602 时序、指令集、汇编对照与定时器算法手册
 │   └── lcd1602_demo.asm           同逻辑的完整汇编源码，可用 Keil 重编
+├── .github/workflows/
+│   └── selftest.yml               CI：push / PR 时自动运行自检
 ├── README.md
 ├── LICENSE
 ├── SECURITY.md
@@ -95,6 +99,8 @@ checks OK
 ├── .editorconfig
 └── .gitignore
 ```
+
+编译产生的 `Objects/`、`Listings/` 与 Keil 个人设置文件都在 `.gitignore` 里，不会入库。
 
 ## 注意事项
 

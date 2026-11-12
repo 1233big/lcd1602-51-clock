@@ -379,17 +379,17 @@
             <File>
               <FileName>lcd1602.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\lcd1602.c</FilePath>
+              <FilePath>.\src\lcd1602.c</FilePath>
             </File>
             <File>
               <FileName>lcd1602.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\lcd1602.h</FilePath>
+              <FilePath>.\src\lcd1602.h</FilePath>
             </File>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>.\src\main.c</FilePath>
             </File>
           </Files>
         </Group>

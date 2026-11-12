@@ -18,7 +18,7 @@ jobs:
 
       - name: 运行 8051 模拟器自检
         run: |
-          out=$(python -I build_lcd.py)
+          out=$(python -I tools/build_lcd.py)
           echo "$out"
           echo "$out" | grep -q "checks OK"
           echo "$out" | grep -q "lines on LCD: \['Claude', 'LCD1602 OK'\]"

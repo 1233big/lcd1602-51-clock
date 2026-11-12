@@ -2,6 +2,14 @@
 
 本项目遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)。
 
+## [1.2.0] - 2026-11-12
+
+### 变更
+
+- 源码移入 `src/`、自检脚本移入 `tools/`、`参考文档/` 改名 `docs/`，根目录只保留 Keil 工程与文档
+- `LCD1602.uvproj` 中的文件路径同步改为 `.\src\`，Keil 打开后可直接编译
+- CI 工作流与 README 中的路径同步更新
+
 ## [1.1.0] - 2026-11-12
 
 ### 新增
